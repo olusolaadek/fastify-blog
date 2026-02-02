@@ -8,6 +8,10 @@ To get started with testing the app, follow these steps:
 Install all necessary dependencies:
 
 ```bash
+npm install @fastify/view ejs
+npm install @fastify/static
+
+
 npm install
 ```
 

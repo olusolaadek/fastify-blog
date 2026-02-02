@@ -12,7 +12,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fastify/static": "^9.0.0",
+    "@fastify/view": "^11.1.1",
+    "ejs": "^4.0.1",
     "env-schema": "^6.0.0",
-    "fastify": "^4.28.1"
+    "fastify": "^5.7.2"
   }
 }

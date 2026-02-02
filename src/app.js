@@ -1,14 +1,30 @@
 import Fastify from "fastify";
 import env from "./config/env.js";
 import logger from "./config/logger.js";
+import routes from "./routes/routes.js";
+
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import fastifyview from "@fastify/view";
+import ejs from "ejs";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const fastify = Fastify({
   logger: logger,
 });
 
-fastify.get("/", function handler(request, reply) {
-  return { message: "Blog app demo" };
+await fastify.register(fastifyview, {
+  engine: {
+    ejs: ejs,
+  },
+  root: path.join(__dirname, "views"),
+  viewExt: "ejs",
+  layout: "layout.ejs",
 });
+
+await fastify.register(routes);
 
 fastify.listen({ port: env.port }, (err, address) => {
   if (err) {
