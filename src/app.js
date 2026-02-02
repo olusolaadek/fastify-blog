@@ -7,6 +7,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import fastifyview from "@fastify/view";
 import ejs from "ejs";
+import fastifyStatic from "@fastify/static";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -22,6 +23,12 @@ await fastify.register(fastifyview, {
   root: path.join(__dirname, "views"),
   viewExt: "ejs",
   layout: "layout.ejs",
+});
+
+// Register static files
+fastify.register(fastifyStatic, {
+  root: path.join(__dirname, "public"),
+  prefix: "/public/",
 });
 
 await fastify.register(routes);
