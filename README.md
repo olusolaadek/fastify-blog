@@ -1,6 +1,7 @@
 ### Testing the App
 
 ## Material
+
 https://betterstack.com/community/guides/scaling-nodejs/introduction-to-fastify/#step-1-understanding-fastify
 
 To get started with testing the app, follow these steps:
@@ -10,6 +11,9 @@ Install all necessary dependencies:
 ```bash
 npm install @fastify/view ejs
 npm install @fastify/static
+npm install better-sqlite3
+npm install slugify
+npm install @fastify/formbody
 
 
 npm install

@@ -8,6 +8,8 @@ import { fileURLToPath } from "node:url";
 import fastifyview from "@fastify/view";
 import ejs from "ejs";
 import fastifyStatic from "@fastify/static";
+import dbConnector from "./config/db.js";
+import fastifyFormbody from "@fastify/formbody";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -30,6 +32,10 @@ fastify.register(fastifyStatic, {
   root: path.join(__dirname, "public"),
   prefix: "/public/",
 });
+
+await fastify.register(fastifyFormbody);
+
+fastify.register(dbConnector);
 
 await fastify.register(routes);
 
