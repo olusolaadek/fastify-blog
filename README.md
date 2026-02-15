@@ -4,7 +4,7 @@ A blog application built with Fastify, EJS templating, and SQLite database.
 
 ## Material
 
-https://betterstack.com/community/guides/scaling-nodejs/introduction-to-fastify/#step-1-understanding-fastify
+<https://betterstack.com/community/guides/scaling-nodejs/introduction-to-fastify/#step-1-understanding-fastify>
 
 ## Current Progress
 
