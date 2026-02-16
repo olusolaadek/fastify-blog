@@ -3,6 +3,7 @@ import {
   getNewPost,
   createPost,
 } from "../controllers/createPost.controller.js";
+import { getPost } from "../controllers/getPost.controller.js";
 
 export default async function routes(fastify, options) {
   fastify.get("/", getRoot);
@@ -11,6 +12,7 @@ export default async function routes(fastify, options) {
     async function (postRoutes) {
       postRoutes.get("/new", getNewPost);
       postRoutes.post("/", createPost);
+      postRoutes.get("/:slug", getPost);
     },
     { prefix: "/post" },
   );
