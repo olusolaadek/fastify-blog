@@ -8,6 +8,8 @@ import { editPost, getEditPost } from "../controllers/editPost.controller.js";
 import { getDeleteConfirm } from "../controllers/getDeleteConfirm.controller.js";
 import { deletePost } from "../controllers/deletePost.controller.js";
 
+import errorHandler from "../middleware/error.js";
+
 export default async function routes(fastify, options) {
   fastify.get("/", getRoot);
   // Register post routes with the /post prefix
@@ -24,4 +26,6 @@ export default async function routes(fastify, options) {
 
     { prefix: "/post" },
   );
+
+  fastify.setErrorHandler(errorHandler);
 }
