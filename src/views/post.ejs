@@ -1,5 +1,7 @@
 <div class="post-content">
   <h1><%= post.title %></h1>
   <p><%= post.content %></p>
-  <a href="/">Back to Home</a>
+  <a class="btn btn-secondary" href="/">Back to Home</a>
+  <a class="btn btn-primary ms-2" href="/post/<%= post.slug %>/edit">Edit</a>
+  <a class="btn btn-danger ms-2" href="/post/<%= post.slug %>/delete">Delete</a>
 </div>

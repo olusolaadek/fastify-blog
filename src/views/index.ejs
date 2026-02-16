@@ -1,18 +1,14 @@
 <h1>Blog Posts</h1>
 <% if (posts.length > 0) { %>
-<ul class="posts">
+<ul class="list-unstyled">
   <% posts.forEach(post => { %>
-  <li>
-    <a href="/post/<%= post.slug %>" class="posts-title"><%= post.title %></a>
-    <div class="post-actions">
-      <a href="/post/<%= post.slug %>/edit" class="btn">Edit</a>
-      <form
-        action="/post/<%= post.slug %>/delete"
-        method="post"
-        class="posts-form"
-      >
-        <button type="submit" class="btn">Delete</button>
-      </form>
+  <li class="mb-3">
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="/post/<%= post.slug %>" class="h5 mb-0"><%= post.title %></a>
+      <div>
+        <a href="/post/<%= post.slug %>/edit" class="btn btn-primary btn-sm">Edit</a>
+        <a href="/post/<%= post.slug %>/delete" class="btn btn-danger btn-sm ms-2">Delete</a>
+      </div>
     </div>
   </li>
   <% }) %>
