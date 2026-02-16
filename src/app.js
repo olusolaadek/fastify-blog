@@ -11,6 +11,11 @@ import fastifyStatic from "@fastify/static";
 import dbConnector from "./config/db.js";
 import fastifyFormbody from "@fastify/formbody";
 
+import fastifyCors from "@fastify/cors";
+import fastifyHelmet from "@fastify/helmet";
+import fastifyCompress from "@fastify/compress";
+import fastifyGracefulShutdown from "fastify-graceful-shutdown";
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -44,6 +49,14 @@ fastify.register(fastifyStatic, {
 });
 
 await fastify.register(fastifyFormbody);
+
+await fastify.register(fastifyCors, {
+  origin: "*",
+  methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE", "OPTIONS"],
+});
+await fastify.register(fastifyHelmet, {});
+await fastify.register(fastifyCompress);
+await fastify.register(fastifyGracefulShutdown);
 
 fastify.register(dbConnector);
 

@@ -12,13 +12,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fastify/compress": "^8.3.1",
+    "@fastify/cors": "^11.2.0",
     "@fastify/formbody": "^8.0.2",
+    "@fastify/helmet": "^13.0.2",
     "@fastify/static": "^9.0.0",
     "@fastify/view": "^11.1.1",
     "better-sqlite3": "^12.6.2",
     "ejs": "^4.0.1",
     "env-schema": "^6.0.0",
     "fastify": "^5.7.2",
+    "fastify-graceful-shutdown": "^5.0.0",
     "slugify": "^1.6.6"
   }
 }

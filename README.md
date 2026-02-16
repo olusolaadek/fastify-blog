@@ -81,6 +81,11 @@ npm install
 - `better-sqlite3` - SQLite database driver
 - `slugify` - URL slug generation
 - `env-schema` - Environment variable validation
+- `@fastify/cors` - Cross-Origin Resource Sharing (CORS) support
+- `@fastify/helmet` - Security headers middleware
+- `@fastify/compress` - Response compression support
+- `fastify-graceful-shutdown` - Graceful server shutdown handling
+
 
 ### 2. Environment Configuration
 
