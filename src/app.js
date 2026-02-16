@@ -18,6 +18,16 @@ const fastify = Fastify({
   logger: logger,
 });
 
+fastify.addHook("onRequest", async (request, reply) => {
+  request.log.info(`Incoming request: ${request.method} ${request.url}`);
+});
+
+fastify.addHook("onResponse", async (request, reply) => {
+  request.log.info(
+    `Request completed: ${request.method} ${request.url} - Status ${reply.statusCode}`
+  );
+});
+
 await fastify.register(fastifyview, {
   engine: {
     ejs: ejs,
